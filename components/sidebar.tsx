@@ -1,15 +1,25 @@
 import Link from "next/link"; 
 
-// Define the types for each sidebar item
 interface SidebarItem {
   name: string;
   path: string;
 }
 
-export default function Sidebar() {
-  // Sidebar components array declared inside the component
+export default function Sidebar() {  
   const sidebarComponents: SidebarItem[] = [
     { name: "Button", path: "/button" },
+    { name: "Input", path: "/input" },
+    { name: "Select", path: "/select" },
+    { name: "Dropdown", path: "/dropdown" },
+    { name: "Card", path: "/card" },
+    { name: "Accordion", path: "/accordion" },
+    { name: "Alert", path: "/alert" },
+    { name: "Checkbox", path: "/checkbox" },
+    { name: "Drawer", path: "/drawer" },
+    { name: "Slider", path: "/slider" },
+    { name: "Tooltip", path: "/tooltip" },
+    { name: "Toggle", path: "/toggle" },
+    { name: "Table", path: "/table" },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import ContentHeader from "@/components/contentHeader";
-import Button from "@/components/UI/Button";
+import Button from "@/components/UI/button";
 
 export default function ButtonPage () {
     return (

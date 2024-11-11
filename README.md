@@ -69,7 +69,3 @@ function MyComponent() {
 ## Contributing
 
 Contributions are welcome! Please read our contributing guidelines before submitting a pull request.
-
-## License
-
-MIT © [Your Organization]

@@ -1,83 +1,63 @@
-import ContentHeader from "@/components/contentHeader";
+import Link from "next/link";
+
+const sidebarSections = [
+  {
+    title: "Overview",
+    items: [
+      { name: "Getting Started", path: "/getting-started" },
+    ]
+  },
+  {
+    title: "Inputs",
+    items: [
+      { name: "Button", path: "/button" },
+      { name: "Input", path: "/input" },
+      { name: "Select", path: "/select" },
+      { name: "Checkbox", path: "/checkbox" },
+      { name: "Toggle", path: "/toggle" },
+      { name: "Slider", path: "/slider" },
+    ]
+  },
+  {
+    title: "Layout",
+    items: [
+      { name: "Card", path: "/card" },
+      { name: "Table", path: "/table" },
+      { name: "Accordion", path: "/accordion" },
+    ]
+  },
+  {
+    title: "Overlay",
+    items: [
+      { name: "Dropdown", path: "/dropdown" },
+      { name: "Drawer", path: "/drawer" },
+      { name: "Alert", path: "/alert" },
+      { name: "Tooltip", path: "/tooltip" },
+    ]
+  }
+];
 
 export default function Home() {
   return (
-    <div className="prose prose-gray max-w-none">
-      <ContentHeader>Getting Started</ContentHeader>
-      
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Installation</h2>
-        <p className="text-gray-600 mb-6">
-          Get started by creating a new Next.js project with our UI components:
-        </p>
-        
-        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm mb-6">
-          <code>npx create-next-app@latest my-ui-app --typescript --tailwind</code>
-        </div>
-
-        <p className="text-gray-600 mb-4">
-          Once installed, you can start the development server:
-        </p>
-
-        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm">
-          <code>npm run dev</code>
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Project Structure</h2>
-        <p className="text-gray-600 mb-6">
-          The project is organized into the following structure:
-        </p>
-
-        <div className="bg-gray-50 rounded-lg p-6 border border-gray-200 font-mono text-sm">
-          <pre className="text-gray-700">
-{`├── components/
-│   ├── UI/
-│   │   ├── Button.tsx
-│   │   ├── Input.tsx
-│   │   └── ...
-│   └── ...
-├── app/
-│   ├── button/
-│   ├── input/
-│   └── ...
-└── ...`}
-          </pre>
-        </div>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Usage</h2>
-        <p className="text-gray-600 mb-6">
-          Import and use components in your pages:
-        </p>
-
-        <div className="bg-gray-900 text-gray-100 rounded-lg p-4 font-mono text-sm">
-          <pre>
-{`import { Button } from '@/components/UI/Button';
-
-export default function MyPage() {
-  return (
-    <Button variant="primary" size="md">
-      Click me
-    </Button>
-  );
-}`}
-          </pre>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Features</h2>
-        <ul className="space-y-3 text-gray-600">
-          <li>✓ Built with TypeScript</li>
-          <li>✓ Tailwind CSS for styling</li>
-          <li>✓ Fully responsive components</li>
-          <li>✓ Accessible by default</li>
-          <li>✓ Dark mode support</li>
-        </ul>
-      </section>
+    <div className="max-w-4xl mx-auto px-6">      
+      <div className="space-y-12">
+        {sidebarSections.map((section, index) => (
+          <div key={index} className="space-y-4">
+            <h2 className="text-3xl font-semibold">{section.title}</h2>
+            
+            {section.items.map((item, itemIndex) => (              
+                <Link
+                  key={itemIndex}
+                  href={item.path}
+                  className="p-4 rounded-lg border border-gray-200 hover:border-gray-300 transition-colors flex items-center justify-between"
+                >
+                  <span>{item.name}</span>
+                  <span className="text-gray-400">→</span>
+                </Link>
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -40,6 +40,7 @@ const sidebarSections = [
 export default function Home() {
   return (
     <div className="max-w-4xl mx-auto px-6">      
+      <h1 className="py-4 text-3xl font-semibold"> Components Library v1 </h1>
       <div className="space-y-12">
         {sidebarSections.map((section, index) => (
           <div key={index} className="space-y-4">

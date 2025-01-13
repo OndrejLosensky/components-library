@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const sidebarSections = [
   {
-    title: "Overview",
+    title: "Overview list",
     items: [
       { name: "Getting Started", path: "/getting-started" },
     ]

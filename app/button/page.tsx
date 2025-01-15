@@ -1,10 +1,31 @@
 import ContentHeader from "@/components/contentHeader";
 import Button from "@/components/UI/Button";
+import Link from "next/link";
 import { IoMail, IoSearch, IoAdd, IoTrash } from "react-icons/io5";
 
 export default function ButtonPage() {
   return (
     <div className="prose prose-gray max-w-none">
+       <Link
+        href="/"
+        className="inline-flex items-center text-blue-600 hover:text-blue-800 mt-4"
+      >
+        <span>Back to homepage</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-4 h-4 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          strokeWidth="2"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 12H5m7-7l-7 7 7 7"
+          />
+        </svg>
+      </Link>
       <ContentHeader>Button</ContentHeader>
       
       <section className="mb-8">
